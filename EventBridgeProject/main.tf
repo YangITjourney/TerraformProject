@@ -1,4 +1,4 @@
-provider "aws" {
+iprovider "aws" {
   region = "us-east-1"
 }
 
@@ -9,7 +9,7 @@ resource "aws_sns_topic" "ec2_stop_notice" {
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.ec2_stop_notice.arn
   protocol  = "email"
-  endpoint  = "yiyanghsu@gmail.com"
+  endpoint  = "email@gmail.com"
 }
 
 resource "aws_cloudwatch_event_rule" "ec2_stop_rule" {
